@@ -13,3 +13,4 @@ My Linux Dotfiles
 |**Text Editor:** Vim|
 |**GUI File Manager:** Thunar|
 |**CLI File Manager:** Ranger|
+|**Screenshot Program:** Maim|
