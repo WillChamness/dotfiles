@@ -1,6 +1,8 @@
 # dotfiles
 My Linux Dotfiles
 
+![My Arch Linux Desktop](./.github/my-archlinux-desktop.jpg)
+
 |My Setup|
 |-------|
 |**OS:** Arch Linux|
