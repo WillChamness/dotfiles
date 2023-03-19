@@ -3,3 +3,4 @@ __pycache__/
 default_config.py
 gruvbox/
 *.bak
+*.orig
