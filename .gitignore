@@ -4,3 +4,4 @@ default_config.py
 gruvbox/
 *.bak
 *.orig
+*.log
