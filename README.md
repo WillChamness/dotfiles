@@ -10,6 +10,7 @@ My Linux Dotfiles
 |**Terminal Emulator:** Alacritty|
 |**Shell:** ZSH (oh-my-zsh)|
 |**Compositor:** Picom|
+|**Dmenu Replacement:** Rofi|
 |**Text Editor:** Vim|
 |**GUI File Manager:** Thunar|
 |**CLI File Manager:** Ranger|
