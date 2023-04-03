@@ -100,7 +100,7 @@ keys = [
     Key([mod], "f", lazy.spawn(file_manager), desc="Run file manager"),
 ]
 
-group_names = "CTRL,WEB1,WEB2,DOCS,DEV,GAME,MUS,PROD,ETC".split(",")
+group_names = "CTRL,WEB1,WEB2,DOCS,FILE,DEV,GAME,PROD,ETC".split(",")
 groups = [Group(name) for name in group_names]
 for i in range(len(groups)):
     keys.extend([
