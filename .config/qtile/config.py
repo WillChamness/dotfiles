@@ -127,7 +127,7 @@ for i in range(len(groups)):
 layouts = [
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     #layout.Max(),
-    layout.MonadTall(border_width=2, border_focus=colors["light-green"], margin=6)
+    layout.MonadTall(border_width=2, border_focus=colors["purple"], margin=6)
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -162,11 +162,11 @@ screens = [
                     rounded=False,
                     active=colors["active-groups"], # window open in group ==> active
                     inactive=colors["inactive-groups"], # no window open in group ==> inactive
-                    this_current_screen_border=colors["aqua"],
+                    this_current_screen_border=colors["purple"],
                     background=colors["bg"]
                 ),
                 widget.Prompt(),
-                widget.WindowName(foreground=colors["green"]),
+                widget.WindowName(foreground=colors["purple"]),
                 widget.Systray(),
                 widget.Sep(foreground=colors["white"]),
                 widget.WidgetBox(
@@ -184,8 +184,8 @@ screens = [
                     foreground=colors["yellow"]
                 ),
                 widget.Sep(foreground=colors["white"]),
-                widget.TextBox("Memory", foreground=colors["blue"], padding=2),
-                widget.Memory(foreground=colors["blue"], measure_mem="G", padding=2),
+                widget.TextBox("Memory", foreground=colors["light-green"], padding=2),
+                widget.Memory(foreground=colors["light-green"], measure_mem="G", padding=2),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -195,7 +195,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Sep(foreground=colors["white"]),
-                widget.Wlan(foreground=colors["purple"], padding=10),
+                widget.Wlan(foreground=colors["blue"], padding=10),
                 widget.Sep(foreground=colors["white"]),
                 widget.Clock(format="%a %m-%d-%Y | %I:%M %p", foreground=colors["light-blue"]),
             ],
