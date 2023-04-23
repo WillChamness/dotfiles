@@ -89,7 +89,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # My custom keys
-    Key([mod, "shift"], "s", lazy.spawn("maim -s /home/will/Pictures/'Arch-%m-%d-%Y-%s-screenshot.jpg'"), desc="take screenshot"),
+    Key([mod, "shift"], "s", lazy.spawn("scrot -s /home/will/Pictures/'Arch-%m-%d-%Y-%s-screenshot.jpg'"), desc="take screenshot"),
     Key([mod, "shift"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
     Key([mod], "b", lazy.spawn(default_browser), desc="Firefox"),
     Key([mod, "shift"], "b", lazy.spawn("flatpak run com.brave.Browser"), desc="Brave"),
