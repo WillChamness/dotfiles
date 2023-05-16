@@ -43,7 +43,7 @@ default_browser = "flatpak run org.mozilla.firefox"
 default_media_player = "flatpak run org.videolan.VLC"
 colors = mycolors.init_colors()
 dmenu = "rofi -show run" # dmenu replacement
-code_editor = "flatpak run com.vscodium.codium"
+calculator = "rofi -show calc -modi calc -no-show-match -no-sort"
 office_suite = "flatpak run org.libreoffice.LibreOffice"
 file_manager = "thunar"
 
@@ -95,9 +95,9 @@ keys = [
     Key([mod, "shift"], "b", lazy.spawn("flatpak run com.brave.Browser"), desc="Brave"),
     Key([mod], "m", lazy.spawn(default_media_player), desc="Media player"),
     Key([mod], "space", lazy.spawn(dmenu), desc="Run dmenu or replacement"),
-    Key([mod], "c", lazy.spawn(code_editor), desc="Run code editor"),
-    Key([mod], "o", lazy.spawn(office_suite), desc="Run office suite"),
-    Key([mod], "f", lazy.spawn(file_manager), desc="Run file manager"),
+    Key([mod], "c", lazy.spawn(calculator), desc="Run rofi calculator"),
+    Key([mod], "o", lazy.spawn(office_suite), desc="Run LibreOffice suite"),
+    Key([mod], "f", lazy.spawn(file_manager), desc="Run thunar file manager"),
 ]
 
 group_names = "CTRL,WEB1,WEB2,DOCS,FILE,DEV,GAME,PROD,ETC".split(",")
