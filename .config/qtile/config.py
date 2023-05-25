@@ -89,6 +89,8 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # My custom keys
+    Key([mod], "comma", lazy.prev_screen(), desc="Move to the previous monitor"),
+    Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod, "shift"], "s", lazy.spawn("scrot -s /home/will/Pictures/'Arch-%m-%d-%Y-%s-screenshot.jpg'"), desc="take screenshot"),
     Key([mod, "shift"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
     Key([mod], "b", lazy.spawn(default_browser), desc="Firefox"),
@@ -98,6 +100,7 @@ keys = [
     Key([mod], "c", lazy.spawn(calculator), desc="Run rofi calculator"),
     Key([mod], "o", lazy.spawn(office_suite), desc="Run LibreOffice suite"),
     Key([mod], "f", lazy.spawn(file_manager), desc="Run thunar file manager"),
+    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
 ]
 
 group_names = "CTRL,WEB1,WEB2,DOCS,FILE,DEV,GAME,PROD,ETC".split(",")
@@ -161,13 +164,63 @@ screens = [
                     highlight_method="block",
                     rounded=False,
                     active=colors["active-groups"], # window open in group ==> active
-                    inactive=colors["inactive-groups"], # no window open in group ==> inactive
                     this_current_screen_border=colors["purple"],
                     background=colors["bg"]
                 ),
                 widget.Prompt(),
                 widget.WindowName(foreground=colors["purple"]),
                 widget.Systray(),
+                widget.Sep(foreground=colors["white"]),
+                widget.WidgetBox(
+                    widgets=[
+                        widget.Bluetooth(hci="/dev_00_1D_43_A0_20_73", padding=10),
+                        widget.CurrentLayout(),
+                    ]
+                ),
+                widget.Sep(foreground=colors["white"]),
+                widget.CPU(foreground=colors["yellow"]),
+                widget.ThermalSensor(
+                    tag_sensor="Tctl", 
+                    threshold=90, 
+                    format="{temp:.0f}{unit}",
+                    foreground=colors["yellow"]
+                ),
+                widget.Sep(foreground=colors["white"]),
+                widget.TextBox("Memory", foreground=colors["light-green"], padding=2),
+                widget.Memory(foreground=colors["light-green"], measure_mem="G", padding=2),
+                widget.Chord(
+                    chords_colors={
+                        "launch": ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                widget.Sep(foreground=colors["white"]),
+                widget.Wlan(foreground=colors["blue"], padding=10),
+                widget.Sep(foreground=colors["white"]),
+                widget.Clock(format="%a %m-%d-%Y | %I:%M %p", foreground=colors["light-blue"]),
+            ],
+            24,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+        ),
+    ),
+
+    Screen(
+        wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg",
+        wallpaper_mode="stretch",
+        top=bar.Bar(
+            [
+                widget.GroupBox(
+                    highlight_method="block",
+                    rounded=False,
+                    active=colors["active-groups"], # window open in group ==> active
+                    this_current_screen_border=colors["purple"],
+                    background=colors["bg"]
+                ),
+                widget.Prompt(),
+                widget.WindowName(foreground=colors["purple"]),
                 widget.Sep(foreground=colors["white"]),
                 widget.WidgetBox(
                     widgets=[
@@ -215,6 +268,7 @@ def autostart():
 # Drag floating layouts.
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Click([mod], "Button1", lazy.window.toggle_floating()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
