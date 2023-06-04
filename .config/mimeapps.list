@@ -1,0 +1,11 @@
+[Default Applications]
+inode/directory=thunar.desktop
+video/mp4=org.videolan.VLC.desktop
+image/jpeg=org.videolan.VLC.desktop
+text/plain=com.vscodium.codium.desktop
+
+[Added Associations]
+inode/directory=thunar.desktop;
+video/mp4=org.videolan.VLC.desktop;
+image/jpeg=org.videolan.VLC.desktop;
+text/plain=nvim.desktop;vim.desktop;com.vscodium.codium.desktop;
