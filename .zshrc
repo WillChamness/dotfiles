@@ -9,6 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+EDITOR=vim
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,10 +108,14 @@ neofetch
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cputop="watch -n 2 sensors k10temp-pci-00c3"
-alias gputop="cat /sys/class/drm/card0/device/gpu_busy_percent"
+alias gputop="watch -n 2 '$(echo cat /sys/class/drm/card0/device/gpu_busy_percent && echo cat /sys/class/drm/card0/device/hwmon/hwmon5/temp1_input)'"
 alias firefox="nohup flatpak run org.mozilla.firefox </dev/null &>/dev/null & disown"
 alias codium="nohup flatpak run com.vscodium.codium </dev/null &>/dev/null & disown"
 alias vlc="nohup flatpak run org.videolan.VLC </dev/null &>/dev/null & disown"
 alias libreoffice="nohup flatpak run org.libreoffice.LibreOffice </dev/null &>/dev/null & disown"
 alias kdenlive="nohup flatpak run org.kde.kdenlive </dev/null &>/dev/null & disown"
 alias obs-studio="nohup flatpak run com.obsproject.Studio </dev/null &>/dev/null & disown"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
