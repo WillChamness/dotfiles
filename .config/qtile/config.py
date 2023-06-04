@@ -39,7 +39,7 @@ import mycolors
 # Predefined variables
 mod = "mod4" # super key
 terminal = "alacritty"
-default_browser = "flatpak run org.mozilla.firefox"
+default_browser = "flatpak run io.gitlab.librewolf-community"
 default_media_player = "flatpak run org.videolan.VLC"
 colors = mycolors.init_colors()
 dmenu = "rofi -show run" # dmenu replacement
@@ -93,7 +93,7 @@ keys = [
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod, "shift"], "s", lazy.spawn("scrot -s /home/will/Pictures/'Arch-%m-%d-%Y-%s-screenshot.jpg'"), desc="take screenshot"),
     Key([mod, "shift"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
-    Key([mod], "b", lazy.spawn(default_browser), desc="Firefox"),
+    Key([mod], "b", lazy.spawn(default_browser), desc="Librewolf"),
     Key([mod, "shift"], "b", lazy.spawn("flatpak run com.brave.Browser"), desc="Brave"),
     Key([mod], "m", lazy.spawn(default_media_player), desc="Media player"),
     Key([mod], "space", lazy.spawn(dmenu), desc="Run dmenu or replacement"),
