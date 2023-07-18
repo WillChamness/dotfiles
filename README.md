@@ -12,6 +12,7 @@ My Linux Dotfiles
 |**Compositor:** Picom|
 |**Dmenu Replacement:** Rofi|
 |**Text Editor:** Vim|
+|**Code Editor:** Neovim|
 |**GUI File Manager:** Thunar|
 |**CLI File Manager:** Ranger|
 |**Screenshot Program:** Scrot|
