@@ -74,6 +74,7 @@ EDITOR=vim
 plugins=(
 	git
 	zsh-autosuggestions
+	zsh-autocomplete
 	zsh-syntax-highlighting
 )
 
@@ -108,7 +109,7 @@ neofetch
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cputop="watch -n 2 sensors k10temp-pci-00c3"
-alias gputop="watch -n 2 '$(echo cat /sys/class/drm/card0/device/gpu_busy_percent && echo cat /sys/class/drm/card0/device/hwmon/hwmon5/temp1_input)'"
+alias gputop="watch -n 2 '$(echo cat /sys/class/drm/card0/device/gpu_busy_percent && echo && echo cat /sys/class/drm/card0/device/hwmon/hwmon5/temp1_input)'"
 alias firefox="nohup flatpak run org.mozilla.firefox </dev/null &>/dev/null & disown"
 alias codium="nohup flatpak run com.vscodium.codium </dev/null &>/dev/null & disown"
 alias vlc="nohup flatpak run org.videolan.VLC </dev/null &>/dev/null & disown"
