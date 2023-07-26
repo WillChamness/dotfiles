@@ -1,5 +1,0 @@
-7-zip-full
-cli-visualizer
-downgrade
-picom-git
-yay
