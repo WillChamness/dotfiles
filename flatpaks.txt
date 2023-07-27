@@ -1,0 +1,9 @@
+com.brave.Browser	flathub
+com.obsproject.Studio	flathub
+com.vscodium.codium	flathub
+io.gitlab.librewolf-community	flathub
+net.lutris.Lutris	flathub
+org.kde.kdenlive	flathub
+org.libreoffice.LibreOffice	flathub
+org.libretro.RetroArch	flathub
+org.videolan.VLC	flathub
