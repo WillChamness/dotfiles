@@ -45,6 +45,7 @@ colors = mycolors.init_colors()
 dmenu = "rofi -show run"  # dmenu replacement
 calculator = "rofi -show calc -modi calc -no-show-match -no-sort"
 shutdown_menu = f"rofi -show power-menu -modi power-menu:{os.path.expanduser('~/.local/bin/rofi-power-menu')}"
+alt_tab = "rofi -show window"
 wifi_menu = os.path.expanduser("~/.local/bin/rofi-wifi-menu")  # custom shell script
 office_suite = "flatpak run org.libreoffice.LibreOffice"
 file_manager = "thunar"
@@ -137,9 +138,10 @@ keys = [
         lazy.spawn(shutdown_menu),
         desc="Shutdown the system",
     ),
+    Key(["mod1"], "tab", lazy.spawn(alt_tab), desc="Alt-tab through your open windows"),
 ]
 
-group_names = "CTRL,WEB1,WEB2,DOCS,FILE,DEV,GAME,PROD,ETC".split(",")
+group_names = "CTRL,WEB1,WEB2,VIRT,FILE,DEV,GAME,PROD,ETC".split(",")
 groups = [Group(name) for name in group_names]
 for i in range(len(groups)):
     keys.extend(
