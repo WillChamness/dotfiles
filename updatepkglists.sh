@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # list installed packages from arch repos and AUR
-pacman -Qqn > pkglist.txt
+pacman -Qqen > pkglist.txt
 comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt
-pacman -Qqm > foreignpkglist.txt
+pacman -Qqem > foreignpkglist.txt
 
 # list installed flatpaks
 flatpak remotes --show-details | awk '{print $1,$3}' > flatpak_remotes.txt
