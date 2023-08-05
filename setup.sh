@@ -32,6 +32,9 @@ while read line; do
 	flatpak install $app_origin $app_id -y
 done < flatpaks.txt
 
+echo "Installing python packages..."
+cat python-pkglist.txt | xargs pipx install
+
 
 # Customize ZSH
 echo "Adding oh-my-zsh..."
