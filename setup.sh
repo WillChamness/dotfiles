@@ -84,5 +84,6 @@ mv BitstreamVeraSansMono.zip $HOME/Downloads
 echo "Done. Some things to do manually:"
 echo 1. Set \'backend = \"xrender\"\' in \'~/.config/picom/picom.conf\'. Otherwise, your system may freeze after reboot. Note that the blurring effect may not work correctly if you do this.
 echo "2. Change the monitor settings in '~/.config/qtile/autostart.sh' to match your preferences"
-echo "3. If you chose the default options when installing flatpak, you may want to downgrade the package 'xdg-desktop-portal-gnome' to version '43.1-1'
+echo "3. If you chose the default options when installing flatpak, you may want to downgrade the package 'xdg-desktop-portal-gnome' to version '43.1-1'"
+echo "4. If you have an NVIDIA graphics card, please install the correct drivers if you haven't already done so"
 echo "Please reboot."
