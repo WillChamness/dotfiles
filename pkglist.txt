@@ -15,6 +15,7 @@ cmatrix
 cups
 debugedit
 dnsmasq
+dunst
 efibootmgr
 fakeroot
 file
@@ -65,6 +66,7 @@ pkgconf
 python-dbus-next
 python-iwlib
 python-pip
+python-pipx
 python-psutil
 python-virtualenv
 qemu-base

@@ -6,7 +6,7 @@ My Linux Dotfiles
 |My Setup|
 |-------|
 |**OS:** Arch Linux|
-|**Windows Manager:** Qtile|
+|**Window Manager:** Qtile (X11)|
 |**Terminal Emulator:** Alacritty|
 |**Shell:** ZSH (oh-my-zsh)|
 |**Compositor:** Picom|
