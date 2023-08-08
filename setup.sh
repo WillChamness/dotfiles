@@ -89,4 +89,5 @@ echo 1. Set \'backend = \"xrender\"\' in \'~/.config/picom/picom.conf\'. Otherwi
 echo "2. Change the monitor settings in '~/.config/qtile/autostart.sh' to match your preferences"
 echo "3. If you chose the default options when installing flatpak, you may want to downgrade the package 'xdg-desktop-portal-gnome' to version '43.1-1'"
 echo "4. If you have an NVIDIA graphics card, please install the correct drivers if you haven't already done so"
+echo "5. Install nodejs with 'nvm install node'. Then do 'npm install -g neovim'. Note that you will need to reload your terminal session to do this."
 echo "Please reboot."
