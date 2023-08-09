@@ -49,11 +49,8 @@ cd $HOME/.oh-my-zsh/custom/plugins
 git clone https://github.com/marlonrichert/zsh-autocomplete 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting 
 git clone https://github.com/zsh-users/zsh-autosuggestions 
+git clone https://github.com/lukechilds/zsh-nvm
 cd $HOME
-
-
-echo "Adding NVM..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 
 
 # Customize Rofi
