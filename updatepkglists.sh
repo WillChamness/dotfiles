@@ -9,5 +9,5 @@ pacman -Qqem > foreignpkglist.txt
 flatpak remotes --show-details | awk '{print $1,$3}' > flatpak_remotes.txt
 flatpak list --app --columns=application --columns=origin > flatpaks.txt | awk '{print $1,$2}' > flatpaks.txt
 
-# list installed packages with pip
+# list installed packages with pipx
 pipx list --short | awk '{print $1}' > python-pkglist.txt
