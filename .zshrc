@@ -72,9 +72,10 @@ EDITOR=vim
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-export NVM_LAZY_LOAD=true
+
+#export NVM_LAZY_LOAD=true
 plugins=(
-	zsh-nvm # keep this first
+	#zsh-nvm # keep this first
 	git
 	zsh-autosuggestions
 	zsh-autocomplete
@@ -120,7 +121,9 @@ alias libreoffice="nohup flatpak run org.libreoffice.LibreOffice </dev/null &>/d
 alias kdenlive="nohup flatpak run org.kde.kdenlive </dev/null &>/dev/null & disown"
 alias obs-studio="nohup flatpak run com.obsproject.Studio </dev/null &>/dev/null & disown"
 
-#
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f "/home/will/.ghcup/env" ] && source "/home/will/.ghcup/env" # ghcup-env

@@ -49,8 +49,13 @@ cd $HOME/.oh-my-zsh/custom/plugins
 git clone https://github.com/marlonrichert/zsh-autocomplete 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting 
 git clone https://github.com/zsh-users/zsh-autosuggestions 
-git clone https://github.com/lukechilds/zsh-nvm
+#git clone https://github.com/lukechilds/zsh-nvm # npm technically not in PATH, so causes problems with neovim. uncomment if you don't use neovim
 cd $HOME
+
+
+# NVM
+echo "Installing nvm..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash # comment if you don't plan to use neovim
 
 
 # Customize Rofi
