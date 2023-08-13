@@ -58,20 +58,6 @@ echo "Installing nvm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash # comment if you don't plan to use neovim
 
 
-# Customize Rofi
-echo "Adding rofi plugins..."
-local_scripts_dir=$HOME/.local/bin
-mkdir -p $local_scripts_dir
-
-wget https://raw.githubusercontent.com/ericmurphyxyz/rofi-wifi-menu/master/rofi-wifi-menu.sh 
-mv rofi-wifi-menu.sh $local_scripts_dir/rofi-wifi-menu
-
-wget https://raw.githubusercontent.com/jluttine/rofi-power-menu/master/rofi-power-menu
-mv rofi-power-menu $local_scripts_dir/rofi-power-menu
-
-chmod u+x $local_scripts_dir/*
-
-
 # Customize Neovim
 echo "Adding Neovim config..."
 nvim_config_dir=$HOME/.config/nvim
