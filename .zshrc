@@ -120,6 +120,7 @@ alias vlc="nohup flatpak run org.videolan.VLC </dev/null &>/dev/null & disown"
 alias libreoffice="nohup flatpak run org.libreoffice.LibreOffice </dev/null &>/dev/null & disown"
 alias kdenlive="nohup flatpak run org.kde.kdenlive </dev/null &>/dev/null & disown"
 alias obs-studio="nohup flatpak run com.obsproject.Studio </dev/null &>/dev/null & disown"
+alias volctl="$HOME/.local/bin/pulsemixer"
 
 
 export NVM_DIR="$HOME/.nvm"
