@@ -176,7 +176,6 @@ for i in range(len(groups)):
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     # layout.Max(),
-    layout.MonadTall(border_width=2, border_focus=colors["purple"], margin=6)
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -188,7 +187,26 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    layout.MonadTall(border_width=2, border_focus=colors["purple"], margin=6),
+    layout.MonadWide(border_width=2, border_focus=colors["purple"], margin=6),
+    layout.TreeTab(
+        font="Ubuntu",
+        fontsize=10,
+        sections=["FIRST", "SECOND"],
+        section_fontsize=11,
+        active_bg=colors["purple"],
+        active_fg=colors["white"],
+        inactive_fg=colors["aqua"],
+        padding_y=5,
+        section_top=10,
+        panel_width=320,
+        border_width=2,
+        border_focus=colors["purple"],
+        margin=6,
+        pannel_width=240
+    )
 ]
+
 
 widget_defaults = dict(
     font="Ubuntu Bold", fontsize=12, padding=5, background=colors["bg"]
