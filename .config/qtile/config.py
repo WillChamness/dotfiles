@@ -141,7 +141,9 @@ keys = [
     Key(["mod1"], "tab", lazy.spawn(alt_tab), desc="Alt-tab through your open windows"),
 ]
 
-group_names = "CTRL,WEB1,WEB2,VIRT,FILE,DEV,GAME,PROD,ETC".split(",")
+
+# Groups
+group_names = "CTRL,WEB1,WEB2,SYS,DEV,GAME,VIRT,PROD,ETC".split(",")
 groups = [Group(name) for name in group_names]
 for i in range(len(groups)):
     keys.extend(
