@@ -27,10 +27,13 @@
 # Imports
 import os
 import subprocess
-from libqtile import bar, layout, widget, hook
+#from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from qtile_extras import widget
+from qtile_extras.widget.decorations import PowerLineDecoration
 
 # Local imports
 import mycolors
@@ -49,6 +52,7 @@ alt_tab = "rofi -show window"
 wifi_menu = os.path.expanduser("~/.local/bin/rofi-wifi-menu")  # custom shell script
 office_suite = "flatpak run org.libreoffice.LibreOffice"
 file_manager = "thunar"
+volume_manager = f"alacritty -e {os.path.expanduser('~/.local/bin/pulsemixer')}"
 
 
 keys = [
@@ -99,45 +103,43 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
     # My custom keys
     # Interacting with screen
     Key([mod], "comma", lazy.prev_screen(), desc="Move to the previous monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod, "shift"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+
     # Take screenshot
     Key(
-        [mod, "shift"],
-        "s",
+        [mod, "shift"], "s",
         lazy.spawn(
             f"scrot -s {os.path.expanduser('~/Pictures/')}/Arch-%m-%d-%Y-%s-screenshot.jpg"
         ),
         desc="take screenshot",
     ),
     Key(
-        ["shift"],
-        "Print",
+        ["shift"], "Print",
         lazy.spawn(
             f"scrot {os.path.expanduser('~/Pictures/')}/Arch-%m-%d-%Y-%s-screenshot.jpg"
         ),
         desc="print screen",
     ),
+
     # Various apps
     Key([mod], "b", lazy.spawn(default_browser), desc="Librewolf"),
     Key([mod, "shift"], "b", lazy.spawn("flatpak run com.brave.Browser"), desc="Brave"),
     Key([mod], "m", lazy.spawn(default_media_player), desc="Media player"),
     Key([mod], "o", lazy.spawn(office_suite), desc="Run LibreOffice suite"),
     Key([mod], "f", lazy.spawn(file_manager), desc="Run thunar file manager"),
+    Key([mod], "v", lazy.spawn(volume_manager), desc="Volume Mixer Control"),
+
     # Rofi
     Key([mod], "space", lazy.spawn(dmenu), desc="Run dmenu or replacement"),
     Key([mod], "c", lazy.spawn(calculator), desc="Run rofi calculator"),
     Key([mod], "w", lazy.spawn(wifi_menu), desc="Connect to WiFi"),
-    Key(
-        [mod, "control", "shift"],
-        "s",
-        lazy.spawn(shutdown_menu),
-        desc="Shutdown the system",
-    ),
+    Key([mod, "control", "shift"], "s", lazy.spawn(shutdown_menu), desc="Shutdown the system"),
     Key(["mod1"], "tab", lazy.spawn(alt_tab), desc="Alt-tab through your open windows"),
 ]
 
@@ -172,6 +174,7 @@ for i in range(len(groups)):
             ),
         ]
     )
+
 
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
@@ -214,6 +217,11 @@ widget_defaults = dict(
 
 extension_defaults = widget_defaults.copy()
 
+powerline = {
+    "decorations": [
+        PowerLineDecoration(path="arrow_right")
+    ]
+}
 
 screens = [
     Screen(
@@ -234,36 +242,56 @@ screens = [
                 widget.Sep(foreground=colors["white"]),
                 widget.WidgetBox(
                     widgets=[
-                        widget.Bluetooth(hci="/dev_00_1D_43_A0_20_73", padding=10),
+                        widget.Bluetooth(hci="/dev_74_F8_DB_95_36_94", padding=10),
                         widget.CurrentLayout(),
-                    ]
+                    ],
                 ),
                 widget.Sep(foreground=colors["white"]),
-                widget.CPU(foreground=colors["yellow"]),
+                widget.TextBox(
+                    background=colors["bg"],
+                    **powerline
+                ),
+                widget.CPU(
+                    foreground=colors["black"],
+                    background=colors["light-blue"],
+                ),
                 widget.ThermalSensor(
                     tag_sensor="Tctl",
                     threshold=90,
                     format="{temp:.0f}{unit}",
-                    foreground=colors["yellow"],
+                    foreground=colors["black"],
+                    background=colors["light-blue"],
+                    **powerline,
                 ),
-                widget.Sep(foreground=colors["white"]),
-                widget.TextBox("Memory", foreground=colors["light-green"], padding=2),
+                widget.TextBox(
+                    "Memory", foreground=colors["black"], 
+                    padding=2,
+                    background=colors["light-green"],
+                ),
                 widget.Memory(
-                    foreground=colors["light-green"], measure_mem="G", padding=2
+                    foreground=colors["black"], 
+                    background=colors["light-green"],
+                    measure_mem="G", padding=2,
+                    **powerline,
                 ),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         "launch": ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Sep(foreground=colors["white"]),
-                widget.Wlan(foreground=colors["blue"], padding=10),
-                widget.Sep(foreground=colors["white"]),
+                widget.Wlan(
+                    foreground=colors["black"],
+                    background=colors["blue"],
+                    padding=10,
+                    **powerline
+                ),
                 widget.Clock(
-                    format="%a %m-%d-%Y | %I:%M %p", foreground=colors["light-blue"]
+                    format="%a %m-%d-%Y | %I:%M %p", 
+                    foreground=colors["black"],
+                    background=colors["light-purple"]
                 ),
             ],
             24,
@@ -288,36 +316,55 @@ screens = [
                 widget.Sep(foreground=colors["white"]),
                 widget.WidgetBox(
                     widgets=[
-                        widget.Bluetooth(hci="/dev_00_1D_43_A0_20_73", padding=10),
                         widget.CurrentLayout(),
-                    ]
+                    ],
                 ),
                 widget.Sep(foreground=colors["white"]),
-                widget.CPU(foreground=colors["yellow"]),
+                widget.TextBox(
+                    background=colors["bg"],
+                    **powerline
+                ),
+                widget.CPU(
+                    foreground=colors["black"],
+                    background=colors["light-blue"],
+                ),
                 widget.ThermalSensor(
                     tag_sensor="Tctl",
                     threshold=90,
                     format="{temp:.0f}{unit}",
-                    foreground=colors["yellow"],
+                    foreground=colors["black"],
+                    background=colors["light-blue"],
+                    **powerline,
                 ),
-                widget.Sep(foreground=colors["white"]),
-                widget.TextBox("Memory", foreground=colors["light-green"], padding=2),
+                widget.TextBox(
+                    "Memory", foreground=colors["black"], 
+                    padding=2,
+                    background=colors["light-green"],
+                ),
                 widget.Memory(
-                    foreground=colors["light-green"], measure_mem="G", padding=2
+                    foreground=colors["black"], 
+                    background=colors["light-green"],
+                    measure_mem="G", padding=2,
+                    **powerline,
                 ),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         "launch": ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Sep(foreground=colors["white"]),
-                widget.Wlan(foreground=colors["blue"], padding=10),
-                widget.Sep(foreground=colors["white"]),
+                widget.Wlan(
+                    foreground=colors["black"],
+                    background=colors["blue"],
+                    padding=10,
+                    **powerline
+                ),
                 widget.Clock(
-                    format="%a %m-%d-%Y | %I:%M %p", foreground=colors["light-blue"]
+                    format="%a %m-%d-%Y | %I:%M %p", 
+                    foreground=colors["black"],
+                    background=colors["light-purple"]
                 ),
             ],
             24,
