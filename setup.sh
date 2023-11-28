@@ -71,6 +71,10 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/BitstreamV
 unzip BitstreamVeraSansMono.zip -d $font_dir
 mv BitstreamVeraSansMono.zip $HOME/Downloads
 
+# Set default browser
+# xdg-settings set io.gitlab.librewolf-community.Desktop
+xdg-settings set com.brave.Browser.desktop
+
 
 echo "Done. Some things to do manually:"
 echo 1. Set \'backend = \"xrender\"\' in \'~/.config/picom/picom.conf\'. Otherwise, your system may freeze after reboot. Note that the blurring effect may not work correctly if you do this.
@@ -79,4 +83,5 @@ echo "3. If you chose the default options when installing flatpak, you may want 
 echo "4. If you have an NVIDIA graphics card, please install the correct drivers if you haven't already done so"
 echo "5. Install nodejs with 'nvm install node'. Then do 'npm install -g neovim'. Note that you will need to reload your terminal session to do this."
 echo "6. Install GHCUP. It is recommended to install the haskell language server manually after installing GHCUP."
+echo "7. Add default applications to Thunar."
 echo "Please reboot."
