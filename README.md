@@ -1,26 +1,31 @@
 # dotfiles
+
 My Linux Dotfiles
 
 ![My Arch Linux Desktop](./.github/my-archlinux-desktop.jpg)
 
-|My Setup|
-|-------|
-|**OS:** Arch Linux|
-|**Window Manager:** Qtile (X11)|
-|**Terminal Emulator:** Alacritty|
-|**Shell:** ZSH (oh-my-zsh)|
-|**Compositor:** Picom|
-|**Dmenu Replacement:** Rofi|
-|**Text Editor:** Vim|
-|**Code Editor:** Neovim|
-|**GUI File Manager:** Thunar|
-|**CLI File Manager:** Ranger|
-|**Screenshot Program:** Scrot|
+| My Setup                         |
+| -------------------------------- |
+| **OS:** Arch Linux               |
+| **Window Manager:** Qtile (X11)  |
+| **Terminal Emulator:** Alacritty |
+| **Shell:** ZSH (oh-my-zsh)       |
+| **Compositor:** Picom            |
+| **Dmenu Replacement:** Rofi      |
+| **Text Editor:** Vim             |
+| **Code Editor:** Neovim          |
+| **GUI File Manager:** Thunar     |
+| **CLI File Manager:** Ranger     |
+| **Screenshot Program:** Scrot    |
+
+My Neovim configuration is in [this repo](https://github.com/WillChamness/astronvim-config).
 
 Feel free to use whatever you want in your own dotfiles. If you want my exact configuration from scatch, follow the install instructions.
 
 # Installation
+
 First, do a minimal Arch Linux installation with the multilib repo enabled. Then, run these commands:
+
 ```
 cd /home
 sudo mv $USER $USER.orig
