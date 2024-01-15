@@ -2,4 +2,6 @@
 cli-visualizer
 downgrade
 picom-git
+qtile-extras
+soundux
 yay

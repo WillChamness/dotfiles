@@ -1,4 +1,5 @@
 com.brave.Browser	flathub
+com.github.tchx84.Flatseal	flathub
 com.obsproject.Studio	flathub
 com.vscodium.codium	flathub
 io.gitlab.librewolf-community	flathub
