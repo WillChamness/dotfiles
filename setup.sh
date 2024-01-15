@@ -75,6 +75,9 @@ mv BitstreamVeraSansMono.zip $HOME/Downloads
 # xdg-settings set io.gitlab.librewolf-community.Desktop
 xdg-settings set com.brave.Browser.desktop
 
+# Enable docker
+sudo systemctl enable docker.socket
+
 
 echo "Done. Some things to do manually:"
 echo 1. Set \'backend = \"xrender\"\' in \'~/.config/picom/picom.conf\'. Otherwise, your system may freeze after reboot. Note that the blurring effect may not work correctly if you do this.
