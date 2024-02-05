@@ -27,7 +27,6 @@
 # Imports
 import os
 import subprocess
-#from libqtile import bar, layout, widget, hook
 from libqtile import bar, layout, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -44,6 +43,7 @@ mod = "mod4"  # super key
 terminal = "alacritty"
 default_browser = "flatpak run io.gitlab.librewolf-community"
 default_media_player = "flatpak run org.videolan.VLC"
+screenshot_program = "flameshot"
 colors = mycolors.init_colors()
 dmenu = "rofi -show run"  # dmenu replacement
 calculator = "rofi -show calc -modi calc -no-show-match -no-sort"
@@ -104,25 +104,32 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
-    # My custom keys
+    # ----- My custom keys -----
+    # My convention is this:
+    # mod + letter represents opening an app
+    # mod + shift + letter also represents opening an app
+    # mod + ctrl + letter represents interacting with system
+    # If there are some keys I use from muscle memory (e.g. taking a screnshot), use that instead
+
     # Interacting with screen
     Key([mod], "comma", lazy.prev_screen(), desc="Move to the previous monitor"),
     Key([mod], "period", lazy.next_screen(), desc="Move focus to next monitor"),
-    Key([mod, "shift"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
-    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod, "control"], "m", lazy.window.toggle_minimize(), desc="Toggle minimize"),
+    Key([mod, "control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod, "control"], "w", lazy.window.toggle_floating(), desc="Set/unset floating mode"),
 
     # Take screenshot
     Key(
         [mod, "shift"], "s",
         lazy.spawn(
-            f"scrot -s {os.path.expanduser('~/Pictures/')}/Arch-%m-%d-%Y-%s-screenshot.jpg"
+            f"{screenshot_program} gui" 
         ),
         desc="take screenshot",
     ),
     Key(
-        ["shift"], "Print",
+        [mod, "shift"], "Print",
         lazy.spawn(
-            f"scrot {os.path.expanduser('~/Pictures/')}/Arch-%m-%d-%Y-%s-screenshot.jpg"
+           f"{screenshot_program} screen" # currently only works for primary monitor
         ),
         desc="print screen",
     ),
@@ -140,40 +147,61 @@ keys = [
     Key([mod], "c", lazy.spawn(calculator), desc="Run rofi calculator"),
     Key([mod], "w", lazy.spawn(wifi_menu), desc="Connect to WiFi"),
     Key([mod, "control", "shift"], "s", lazy.spawn(shutdown_menu), desc="Shutdown the system"),
-    Key(["mod1"], "tab", lazy.spawn(alt_tab), desc="Alt-tab through your open windows"),
+    Key(["mod1"], "tab", lazy.spawn(alt_tab), desc="Alt-tab through the open windows"),
 ]
 
 
 # Groups
-group_names = "CTRL,WEB1,WEB2,SYS,DEV,GAME,VIRT,PROD,ETC".split(",")
+group_names = "CTRL,WEB1,WEB2,FILE,DEV,GAME,SYS,PROD,SOC".split(",") # may change frequently
 groups = [Group(name) for name in group_names]
-for i in range(len(groups)):
+for i, group in enumerate(groups):
     keys.extend(
         [
             Key(
                 [mod],
                 str(i + 1),
-                lazy.group[groups[i].name].toscreen(),
-                desc="Switch to group {}".format(groups[i].name),
+                lazy.group[group.name].toscreen(),
+                desc="Switch to group {}".format(group.name),
             ),
             Key(
                 [mod, "shift"],
                 str(i + 1),
-                lazy.window.togroup(groups[i].name, switch_group=True),
+                lazy.window.togroup(group.name, switch_group=True),
                 desc="Switch to & move focused window to group {}".format(
-                    groups[i].name
+                    group.name
                 ),
             ),
             Key(
                 [mod, "control"],
                 str(i + 1),
-                lazy.window.togroup(groups[i].name, switch_group=False),
-                desc="Move the focused window to group {} (but don't switch to it)".format(
-                    groups[i].name
+                lazy.window.togroup(group.name, switch_group=False),
+                desc="Move the focused window to group {} but don't switch to it".format(
+                    group.name
                 ),
             ),
         ]
     )
+# manually add the 0-th group to the end of the groups to be consistent with keyboard
+final_group = "ETC"
+groups.append(Group(final_group))
+keys.extend(
+    [
+        Key([mod], "0", lazy.group[final_group].toscreen(), desc="Switch to group 0 (the last group)"),
+        Key(
+            [mod, "shift"], 
+            "0", 
+            lazy.window.togroup(final_group, switch_group=True), 
+                desc="Switch to & move focused window to group 0 (the last group)"
+        ),
+        Key(
+            [mod, "control"], 
+            "0", 
+            lazy.window.togroup(final_group, switch_group=False), 
+                desc="Move focused window to group 0 (the last group) but don't switch to it"
+        ),
+    ]
+)
+
 
 
 layouts = [
@@ -191,7 +219,7 @@ layouts = [
     # layout.VerticalTile(),
     # layout.Zoomy(),
     layout.MonadTall(border_width=2, border_focus=colors["purple"], margin=6),
-    layout.MonadWide(border_width=2, border_focus=colors["purple"], margin=6),
+    # layout.MonadWide(border_width=2, border_focus=colors["purple"], margin=6),
     layout.TreeTab(
         font="Ubuntu",
         fontsize=10,
@@ -206,7 +234,7 @@ layouts = [
         border_width=2,
         border_focus=colors["purple"],
         margin=6,
-        pannel_width=240
+        pannel_width=240,
     )
 ]
 
@@ -215,7 +243,7 @@ widget_defaults = dict(
     font="Ubuntu Bold", fontsize=12, padding=5, background=colors["bg"]
 )
 
-extension_defaults = widget_defaults.copy()
+extension_defaults = widget_defaults.copy() # auto generated by qtile
 
 powerline = {
     "decorations": [
@@ -238,7 +266,7 @@ screens = [
                 ),
                 widget.Prompt(),
                 widget.WindowName(foreground=colors["purple"]),
-                widget.Systray(),
+                widget.Systray(), # can only have one on primary monitor
                 widget.Sep(foreground=colors["white"]),
                 widget.WidgetBox(
                     widgets=[
@@ -383,19 +411,20 @@ def autostart():
 
 # Drag floating layouts.
 mouse = [
+    # Drag the window to set it to floating mode
     Drag(
         [mod],
         "Button1",
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
-    Click([mod], "Button1", lazy.window.toggle_floating()),
     Drag(
-        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size(), # drag with right click to resize the window in floating mode
     ),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Click([mod], "Button2", lazy.window.bring_to_front()), # middle mouse button to bring floating window to the front
 ]
 
+# auto generated by qtile
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
