@@ -18,7 +18,7 @@ My Linux Dotfiles
 | **CLI File Manager:** Ranger      |
 | **Screenshot Program:** Flameshot |
 
-My Neovim configuration is in [this repo](https://github.com/WillChamness/astronvim-config).
+My Neovim configuration is in [this repo](https://github.com/WillChamness/nvim-config).
 
 Feel free to use whatever you want in your own dotfiles. If you want my exact configuration from scatch, follow the install instructions.
 
