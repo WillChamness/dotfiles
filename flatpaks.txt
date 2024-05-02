@@ -1,9 +1,11 @@
 com.brave.Browser	flathub
+com.discordapp.Discord	flathub
 com.github.tchx84.Flatseal	flathub
 com.obsproject.Studio	flathub
 com.vscodium.codium	flathub
 io.gitlab.librewolf-community	flathub
 net.lutris.Lutris	flathub
+org.DolphinEmu.dolphin-emu	flathub
 org.kde.kdenlive	flathub
 org.libreoffice.LibreOffice	flathub
 org.libretro.RetroArch	flathub

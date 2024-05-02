@@ -1,5 +1,5 @@
-less
 python-chardet
+python-pywlroots
 qemu-audio-spice
 qemu-block-curl
 qemu-block-dmg
