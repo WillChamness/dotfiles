@@ -1,0 +1,8 @@
+#!/bin/sh
+killall -9 xwinwrap
+
+wp=$(cat $HOME/.local/bin/wallpaper-save)
+
+xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/bin/wallpaper-live WID $wp &
+# shift the video by 1920 pixels horizontally to show up on my 2nd screen
+xwinwrap -g 1920x1080+1920+0 -un -fdt -ni -b -nf -ov -- $HOME/.local/bin/wallpaper-live WID $wp &

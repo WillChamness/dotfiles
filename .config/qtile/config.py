@@ -274,7 +274,7 @@ powerline = {"decorations": [PowerLineDecoration(path="arrow_right")]}
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg",
+        #wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg", # wallpaper now handled by autostart
         wallpaper_mode="stretch",
         top=bar.Bar(
             [
@@ -348,7 +348,7 @@ screens = [
         ),
     ),
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg",
+        #wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg", # wallpaper now handled by autostart
         wallpaper_mode="stretch",
         top=bar.Bar(
             [
