@@ -1,0 +1,193 @@
+{
+    "pipx_spec_version": "0.1",
+    "venvs": {
+        "frogmouth": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/frogmouth/bin/frogmouth",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "httpx": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/frogmouth/bin/httpx",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "markdown-it-py": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/frogmouth/bin/markdown-it",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pygments": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/frogmouth/bin/pygmentize",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "frogmouth"
+                    ],
+                    "apps_of_dependencies": [
+                        "httpx",
+                        "markdown-it",
+                        "pygmentize"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "frogmouth",
+                    "package_or_url": "frogmouth",
+                    "package_version": "0.9.2",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.4",
+                "python_version": "Python 3.12.3",
+                "source_interpreter": {
+                    "__Path__": "/usr/bin/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pulsemixer": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/pulsemixer/bin/pulsemixer",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "pulsemixer"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "pulsemixer",
+                    "package_or_url": "pulsemixer",
+                    "package_version": "1.5.1",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.4",
+                "python_version": "Python 3.12.3",
+                "source_interpreter": {
+                    "__Path__": "/usr/bin/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pytube-gui": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pytube-gui",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "pyqt6": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pylupdate6",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pyuic6",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pytube": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pytube",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "pytube-gui"
+                    ],
+                    "apps_of_dependencies": [
+                        "pytube",
+                        "pylupdate6",
+                        "pyuic6"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "pytube_gui",
+                    "package_or_url": "git+https://github.com/WillChamness/pytube-gui",
+                    "package_version": "0.1.3",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.4",
+                "python_version": "Python 3.12.3",
+                "source_interpreter": {
+                    "__Path__": "/usr/bin/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "tcpgen": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/tcpgen/bin/tcpgen",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "tcpgen"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {},
+                    "package": "tcpgen",
+                    "package_or_url": "tcpgen",
+                    "package_version": "0.1.1",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.4",
+                "python_version": "Python 3.12.3",
+                "source_interpreter": {
+                    "__Path__": "/usr/bin/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        }
+    }
+}

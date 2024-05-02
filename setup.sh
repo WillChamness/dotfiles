@@ -33,8 +33,7 @@ while read line; do
 done < flatpaks.txt
 
 echo "Installing python packages..."
-cat python-pkglist.txt | xargs pipx install
-
+cat pipx.json | jq '.venvs.[].metadata.main_package.package_or_url' -r | xargs pipx install
 
 # Customize ZSH
 echo "Adding oh-my-zsh..."
