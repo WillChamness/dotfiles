@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # run when zsh starts
-neofetch
+fastfetch --pipe | lolcat
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -131,3 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f "/home/will/.ghcup/env" ] && source "/home/will/.ghcup/env" # ghcup-env
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

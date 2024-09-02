@@ -1,4 +1,6 @@
+jdk-openjdk
 python-chardet
+python-inflect
 python-pywlroots
 qemu-audio-spice
 qemu-block-curl
@@ -20,5 +22,6 @@ qemu-pr-helper
 qemu-tools
 qemu-ui-curses
 qemu-ui-spice-app
+ruby-stdlib
 xdg-desktop-portal-gnome
 xorg-xwayland

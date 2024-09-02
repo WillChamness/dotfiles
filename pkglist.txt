@@ -21,6 +21,7 @@ docker-compose
 dunst
 efibootmgr
 fakeroot
+fastfetch
 feh
 ffmpeg
 file
@@ -43,6 +44,7 @@ gzip
 htop
 imagemagick
 iwd
+jq
 lazygit
 libguestfs
 libpulse
@@ -78,6 +80,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pkgconf
+pyenv
 python-dbus-next
 python-iwlib
 python-pip

@@ -4,7 +4,7 @@ downgrade
 minecraft-launcher
 picom-git
 qtile-extras
+rar
 shell-color-scripts
-soundux
 xwinwrap-0.9-bin
 yay

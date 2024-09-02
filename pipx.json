@@ -48,10 +48,11 @@
                     "package": "frogmouth",
                     "package_or_url": "frogmouth",
                     "package_version": "0.9.2",
+                    "pinned": false,
                     "pip_args": [],
                     "suffix": ""
                 },
-                "pipx_metadata_version": "0.4",
+                "pipx_metadata_version": "0.5",
                 "python_version": "Python 3.12.3",
                 "source_interpreter": {
                     "__Path__": "/usr/bin/python",
@@ -84,67 +85,11 @@
                     "package": "pulsemixer",
                     "package_or_url": "pulsemixer",
                     "package_version": "1.5.1",
+                    "pinned": false,
                     "pip_args": [],
                     "suffix": ""
                 },
-                "pipx_metadata_version": "0.4",
-                "python_version": "Python 3.12.3",
-                "source_interpreter": {
-                    "__Path__": "/usr/bin/python",
-                    "__type__": "Path"
-                },
-                "venv_args": []
-            }
-        },
-        "pytube-gui": {
-            "metadata": {
-                "injected_packages": {},
-                "main_package": {
-                    "app_paths": [
-                        {
-                            "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pytube-gui",
-                            "__type__": "Path"
-                        }
-                    ],
-                    "app_paths_of_dependencies": {
-                        "pyqt6": [
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pylupdate6",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pyuic6",
-                                "__type__": "Path"
-                            }
-                        ],
-                        "pytube": [
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/pytube-gui/bin/pytube",
-                                "__type__": "Path"
-                            }
-                        ]
-                    },
-                    "apps": [
-                        "pytube-gui"
-                    ],
-                    "apps_of_dependencies": [
-                        "pytube",
-                        "pylupdate6",
-                        "pyuic6"
-                    ],
-                    "include_apps": true,
-                    "include_dependencies": false,
-                    "man_pages": [],
-                    "man_pages_of_dependencies": [],
-                    "man_paths": [],
-                    "man_paths_of_dependencies": {},
-                    "package": "pytube_gui",
-                    "package_or_url": "git+https://github.com/WillChamness/pytube-gui",
-                    "package_version": "0.1.3",
-                    "pip_args": [],
-                    "suffix": ""
-                },
-                "pipx_metadata_version": "0.4",
+                "pipx_metadata_version": "0.5",
                 "python_version": "Python 3.12.3",
                 "source_interpreter": {
                     "__Path__": "/usr/bin/python",
@@ -177,13 +122,133 @@
                     "package": "tcpgen",
                     "package_or_url": "tcpgen",
                     "package_version": "0.1.1",
+                    "pinned": false,
                     "pip_args": [],
                     "suffix": ""
                 },
-                "pipx_metadata_version": "0.4",
+                "pipx_metadata_version": "0.5",
                 "python_version": "Python 3.12.3",
                 "source_interpreter": {
                     "__Path__": "/usr/bin/python",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "yt-dlp": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/yt-dlp",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "charset-normalizer": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/normalizer",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "mutagen": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3cp",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3iconv",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3v2",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/moggsplit",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mutagen-inspect",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mutagen-pony",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "yt-dlp"
+                    ],
+                    "apps_of_dependencies": [
+                        "mid3cp",
+                        "mid3iconv",
+                        "mid3v2",
+                        "moggsplit",
+                        "mutagen-inspect",
+                        "mutagen-pony",
+                        "normalizer"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [
+                        "man1/yt-dlp.1"
+                    ],
+                    "man_pages_of_dependencies": [
+                        "man1/mid3cp.1",
+                        "man1/mid3iconv.1",
+                        "man1/mid3v2.1",
+                        "man1/moggsplit.1",
+                        "man1/mutagen-inspect.1",
+                        "man1/mutagen-pony.1"
+                    ],
+                    "man_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/yt-dlp.1",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "man_paths_of_dependencies": {
+                        "mutagen": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3cp.1",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3iconv.1",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3v2.1",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/moggsplit.1",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mutagen-inspect.1",
+                                "__type__": "Path"
+                            },
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mutagen-pony.1",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "package": "yt-dlp",
+                    "package_or_url": "yt-dlp",
+                    "package_version": "2024.8.6",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.10.14",
+                "source_interpreter": {
+                    "__Path__": "/home/will/.pyenv/shims/python",
                     "__type__": "Path"
                 },
                 "venv_args": []
