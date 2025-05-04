@@ -40,7 +40,7 @@ import mycolors
 
 # Predefined variables
 mod = "mod4"  # super key
-terminal = "alacritty"
+terminal = "kitty"
 default_browser = "flatpak run io.gitlab.librewolf-community"
 default_media_player = "flatpak run org.videolan.VLC"
 screenshot_program = "flameshot"
@@ -53,6 +53,7 @@ wifi_menu = os.path.expanduser("~/.local/bin/rofi-wifi-menu")  # custom shell sc
 office_suite = "flatpak run org.libreoffice.LibreOffice"
 file_manager = "thunar"
 volume_manager = f"alacritty -e {os.path.expanduser('~/.local/bin/pulsemixer')}"
+lock_screen = "betterlockscreen -l"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -110,7 +111,7 @@ keys = [
     # mod + shift + letter also represents opening an app
     # mod + ctrl + letter represents interacting with system
     # If there are some keys I use from muscle memory (e.g. taking a screnshot), use that instead
-    # Interacting with screen
+    # Interacting with screen/system
     Key(
         [mod, "control"],
         "h",
@@ -141,6 +142,7 @@ keys = [
         lazy.window.toggle_floating(),
         desc="Set/unset floating mode",
     ),
+    Key([mod, "control", "shift"], "l", lazy.spawn(lock_screen), desc="Lock the screen when away from the desk"),
     # Take screenshot
     Key(
         [mod, "shift"],
@@ -256,11 +258,10 @@ layouts = [
         inactive_fg=colors["aqua"],
         padding_y=5,
         section_top=10,
-        panel_width=320,
+        panel_width=250,
         border_width=2,
         border_focus=colors["purple"],
         margin=6,
-        pannel_width=240,
     ),
 ]
 
