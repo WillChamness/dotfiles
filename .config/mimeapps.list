@@ -2,10 +2,21 @@
 inode/directory=thunar.desktop
 video/mp4=org.videolan.VLC.desktop
 image/jpeg=org.videolan.VLC.desktop
-text/plain=com.vscodium.codium.desktop
+text/plain=nvim.desktop
+application/x-zerosize=nvim.desktop
+image/png=org.videolan.VLC.desktop
+application/xml=io.gitlab.librewolf-community.desktop
 
 [Added Associations]
 inode/directory=thunar.desktop;
 video/mp4=org.videolan.VLC.desktop;
 image/jpeg=org.videolan.VLC.desktop;
-text/plain=nvim.desktop;vim.desktop;com.vscodium.codium.desktop;
+text/plain=com.vscodium.codium.desktop;com.brave.Browser.desktop;ranger.desktop;nvim.desktop;vim.desktop;
+application/x-zerosize=nvim.desktop;com.vscodium.codium.desktop;vim.desktop;
+text/markdown=com.brave.Browser.desktop;io.gitlab.librewolf-community.desktop;
+image/png=feh.desktop;com.brave.Browser.desktop;org.videolan.VLC.desktop;
+application/xml=io.gitlab.librewolf-community.desktop;
+text/x-log=com.vscodium.codium.desktop;
+text/x-chdr=com.vscodium.codium.desktop;
+text/html=com.vscodium.codium.desktop;
+application/json=com.vscodium.codium.desktop;
