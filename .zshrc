@@ -124,7 +124,11 @@ alias libreoffice="nohup flatpak run org.libreoffice.LibreOffice </dev/null &>/d
 alias kdenlive="nohup flatpak run org.kde.kdenlive </dev/null &>/dev/null & disown"
 alias obs-studio="nohup flatpak run com.obsproject.Studio </dev/null &>/dev/null & disown"
 alias volctl="$HOME/.local/bin/pulsemixer"
+alias yay="pyenv shell system && yay"
+alias ts-debug="npx tsc && node --inspect-brk"
 
+# kitty fix for SSH
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh" 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
