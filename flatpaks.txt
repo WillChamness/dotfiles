@@ -3,6 +3,7 @@ com.discordapp.Discord	flathub
 com.github.tchx84.Flatseal	flathub
 com.obsproject.Studio	flathub
 com.vscodium.codium	flathub
+io.github.Qalculate	flathub
 io.gitlab.librewolf-community	flathub
 net.kuribo64.melonDS	flathub
 net.lutris.Lutris	flathub
@@ -12,4 +13,5 @@ org.kde.kdenlive	flathub
 org.libreoffice.LibreOffice	flathub
 org.libretro.RetroArch	flathub
 org.prismlauncher.PrismLauncher	flathub
+org.remmina.Remmina	flathub
 org.videolan.VLC	flathub

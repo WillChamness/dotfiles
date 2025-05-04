@@ -53,9 +53,9 @@
                     "suffix": ""
                 },
                 "pipx_metadata_version": "0.5",
-                "python_version": "Python 3.12.3",
+                "python_version": "Python 3.13.1",
                 "source_interpreter": {
-                    "__Path__": "/usr/bin/python",
+                    "__Path__": "/usr/bin/python3.13",
                     "__type__": "Path"
                 },
                 "venv_args": []
@@ -90,9 +90,64 @@
                     "suffix": ""
                 },
                 "pipx_metadata_version": "0.5",
-                "python_version": "Python 3.12.3",
+                "python_version": "Python 3.13.1",
                 "source_interpreter": {
-                    "__Path__": "/usr/bin/python",
+                    "__Path__": "/usr/bin/python3.13",
+                    "__type__": "Path"
+                },
+                "venv_args": []
+            }
+        },
+        "pyscanr": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/will/.local/pipx/venvs/pyscanr/bin/pyscanr",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "scapy": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/pyscanr/bin/scapy",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "pyscanr"
+                    ],
+                    "apps_of_dependencies": [
+                        "scapy"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "man_pages": [],
+                    "man_pages_of_dependencies": [
+                        "man1/scapy.1"
+                    ],
+                    "man_paths": [],
+                    "man_paths_of_dependencies": {
+                        "scapy": [
+                            {
+                                "__Path__": "/home/will/.local/pipx/venvs/pyscanr/share/man/man1/scapy.1",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "package": "pyscanr",
+                    "package_or_url": "git+https://github.com/WillChamness/pyscanr",
+                    "package_version": "0.1.1",
+                    "pinned": false,
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.5",
+                "python_version": "Python 3.13.1",
+                "source_interpreter": {
+                    "__Path__": "/usr/bin/python3.13",
                     "__type__": "Path"
                 },
                 "venv_args": []
@@ -127,9 +182,9 @@
                     "suffix": ""
                 },
                 "pipx_metadata_version": "0.5",
-                "python_version": "Python 3.12.3",
+                "python_version": "Python 3.13.1",
                 "source_interpreter": {
-                    "__Path__": "/usr/bin/python",
+                    "__Path__": "/usr/bin/python3.13",
                     "__type__": "Path"
                 },
                 "venv_args": []
@@ -145,110 +200,35 @@
                             "__type__": "Path"
                         }
                     ],
-                    "app_paths_of_dependencies": {
-                        "charset-normalizer": [
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/normalizer",
-                                "__type__": "Path"
-                            }
-                        ],
-                        "mutagen": [
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3cp",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3iconv",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mid3v2",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/moggsplit",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mutagen-inspect",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/bin/mutagen-pony",
-                                "__type__": "Path"
-                            }
-                        ]
-                    },
+                    "app_paths_of_dependencies": {},
                     "apps": [
                         "yt-dlp"
                     ],
-                    "apps_of_dependencies": [
-                        "mid3cp",
-                        "mid3iconv",
-                        "mid3v2",
-                        "moggsplit",
-                        "mutagen-inspect",
-                        "mutagen-pony",
-                        "normalizer"
-                    ],
+                    "apps_of_dependencies": [],
                     "include_apps": true,
                     "include_dependencies": false,
                     "man_pages": [
                         "man1/yt-dlp.1"
                     ],
-                    "man_pages_of_dependencies": [
-                        "man1/mid3cp.1",
-                        "man1/mid3iconv.1",
-                        "man1/mid3v2.1",
-                        "man1/moggsplit.1",
-                        "man1/mutagen-inspect.1",
-                        "man1/mutagen-pony.1"
-                    ],
+                    "man_pages_of_dependencies": [],
                     "man_paths": [
                         {
                             "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/yt-dlp.1",
                             "__type__": "Path"
                         }
                     ],
-                    "man_paths_of_dependencies": {
-                        "mutagen": [
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3cp.1",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3iconv.1",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mid3v2.1",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/moggsplit.1",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mutagen-inspect.1",
-                                "__type__": "Path"
-                            },
-                            {
-                                "__Path__": "/home/will/.local/pipx/venvs/yt-dlp/share/man/man1/mutagen-pony.1",
-                                "__type__": "Path"
-                            }
-                        ]
-                    },
+                    "man_paths_of_dependencies": {},
                     "package": "yt-dlp",
                     "package_or_url": "yt-dlp",
-                    "package_version": "2024.8.6",
+                    "package_version": "2025.3.21",
                     "pinned": false,
                     "pip_args": [],
                     "suffix": ""
                 },
                 "pipx_metadata_version": "0.5",
-                "python_version": "Python 3.10.14",
+                "python_version": "Python 3.13.1",
                 "source_interpreter": {
-                    "__Path__": "/home/will/.pyenv/shims/python",
+                    "__Path__": "/usr/bin/python3.13",
                     "__type__": "Path"
                 },
                 "venv_args": []
