@@ -1,0 +1,8 @@
+[terminal.shell]
+args = ["--login"]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 0.5
+
+[terminal]
