@@ -3,6 +3,7 @@ betterlockscreen
 cli-visualizer
 downgrade
 minecraft-launcher
+neofetch
 picom-git
 qtile-extras
 rar
