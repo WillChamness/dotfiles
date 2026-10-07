@@ -1,12 +1,15 @@
+db
 geoclue
 glib2-devel
 jdk-openjdk
+lib32-harfbuzz
 libportal-gtk3
 libportal-gtk4
-openexr
+openmpi
 python-chardet
 python-inflect
-python-pywlroots
+qt5-svg
+rtkit
 ruby-stdlib
 xdg-desktop-portal-gnome
 xorg-xwayland

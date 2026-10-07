@@ -1,5 +1,7 @@
 7-zip-full
 betterlockscreen
+bridge-utils
+brother-dcpl2640dw
 cli-visualizer
 downgrade
 minecraft-launcher

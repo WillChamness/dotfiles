@@ -50,10 +50,10 @@ calculator = "rofi -show calc -modi calc -no-show-match -no-sort"
 shutdown_menu = f"rofi -show power-menu -modi power-menu:{os.path.expanduser('~/.local/bin/rofi-power-menu')}"
 alt_tab = "rofi -show window"
 wifi_menu = os.path.expanduser("~/.local/bin/rofi-wifi-menu")  # custom shell script
-office_suite = "flatpak run org.libreoffice.LibreOffice"
 file_manager = "thunar"
-volume_manager = f"alacritty -e {os.path.expanduser('~/.local/bin/pulsemixer')}"
+volume_manager = f"{terminal} -e {os.path.expanduser('~/.local/bin/pulsemixer')}"
 lock_screen = "betterlockscreen -l"
+my_wallpaper = "~/.config/qtile/wallpapers/City_Pixel_Art_1920x1080.png"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -162,7 +162,6 @@ keys = [
     Key([mod], "b", lazy.spawn(default_browser), desc="Librewolf"),
     Key([mod, "shift"], "b", lazy.spawn("flatpak run com.brave.Browser"), desc="Brave"),
     Key([mod], "m", lazy.spawn(default_media_player), desc="Media player"),
-    Key([mod], "o", lazy.spawn(office_suite), desc="Run LibreOffice suite"),
     Key([mod], "f", lazy.spawn(file_manager), desc="Run thunar file manager"),
     Key([mod], "v", lazy.spawn(volume_manager), desc="Volume Mixer Control"),
     # Rofi
@@ -179,7 +178,7 @@ keys = [
 ]
 
 # Groups
-group_names = "CTRL,WEB1,WEB2,FILE,DEV,GAME,SYS,PROD,SOC".split(
+group_names = "CTRL,WEB1,WEB2,FILE,DEV,GAME,SYS,MEDIA,SOC".split(
     ","
 )  # may change frequently
 groups = [Group(name) for name in group_names]
@@ -275,7 +274,7 @@ powerline = {"decorations": [PowerLineDecoration(path="arrow_right")]}
 
 screens = [
     Screen(
-        #wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg", # wallpaper now handled by autostart
+        wallpaper=my_wallpaper,
         wallpaper_mode="stretch",
         top=bar.Bar(
             [
@@ -349,7 +348,7 @@ screens = [
         ),
     ),
     Screen(
-        #wallpaper="~/.config/qtile/wallpapers/person-looking-over-city-1920x1080.jpg", # wallpaper now handled by autostart
+        wallpaper=my_wallpaper,
         wallpaper_mode="stretch",
         top=bar.Bar(
             [

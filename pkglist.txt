@@ -10,17 +10,19 @@ bison
 blueman
 bluez
 bluez-utils
-bridge-utils
 c-ares
 cifs-utils
 cmatrix
+cpupower
 cups
 debugedit
 dnsmasq
 docker
 docker-compose
+dosfstools
 dunst
 efibootmgr
+ex-vi-compat
 fakeroot
 fastfetch
 feh
@@ -64,6 +66,7 @@ make
 man-db
 man-pages
 mpv
+mtools
 nano
 neovim
 network-manager-applet
@@ -98,7 +101,9 @@ reflector
 ripgrep
 rofi
 rofi-calc
+rustup
 scrot
+sddm
 sed
 smartmontools
 starship
@@ -113,7 +118,6 @@ tree
 ufw
 unzip
 vde2
-vi
 vim
 virtualbox
 vulkan-radeon

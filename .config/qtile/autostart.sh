@@ -15,4 +15,4 @@ if command -v dbus-update-activation-environment >/dev/null 2>&1; then
 fi
 
 # live wallpaper
-$HOME/.local/bin/wallpaper-wrap
+# $HOME/.local/bin/wallpaper-wrap
